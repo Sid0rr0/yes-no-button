@@ -1,4 +1,4 @@
-<div class="flex flex-col items-center gap-4">
+<div class="flex flex-col items-center gap-4 max-w-xl">
   <h1 class="text-2xl font-bold">About</h1>
 
   <p>
