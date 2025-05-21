@@ -16,6 +16,6 @@
 	{@render children()}
 </main>
 
-<footer class="w-full text-center pb-2">
+<!-- <footer class="w-full text-center pb-2">
 	<p>© 2025 Yes/No button</p>
-</footer>
+</footer> -->
