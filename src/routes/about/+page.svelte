@@ -7,6 +7,7 @@
     decisions and their outcomes.
   </p>
 
+  <h2 class="text-xl font-bold">Technical details</h2>
   <p>
     Your data is stored locally in your browser using IndexedDB, so you can
     access it even when you're offline. 
@@ -19,4 +20,10 @@
     user-friendly, with a clean interface that allows you to focus on making
     decisions.
   </p>
+
+  <h2 class="text-xl font-bold">Links</h2>
+  <div class="flex gap-4">
+    <a href="https://github.com/Sid0rr0/yes-no-button" target="_blank">GitHub</a>
+    <a href="https://www.hungstuff.online/" target="_blank">HungStuff.online</a>
+  </div>
 </div>
