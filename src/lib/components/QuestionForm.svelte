@@ -6,12 +6,12 @@
 
   let props = $props()
 
-  let status = $state("")
+  // let status = $state("")
   let questionText = $state("")
   let result = $state(-1)
 
 
-let percentageText = $derived((result*100).toFixed(2)+"%")
+// let percentageText = $derived((result*100).toFixed(2)+"%")
 let text = $derived(result >= props.treshold / 100 ? 'YES' : 'NO')
 
   async function addQuestion() {
@@ -23,11 +23,10 @@ let text = $derived(result >= props.treshold / 100 ? 'YES' : 'NO')
         date: new Date().toISOString(),
       });
 
-      status = `Question ${questionText} successfully added.`;
-      
-      questionText = ""
+      // status = `Question ${questionText} successfully added.`;
     } catch (error) {
-      status = `Failed to add ${questionText}: ${error}`;
+      // status = `Failed to add ${questionText}: ${error}`;
+      console.error("Failed to add question:", error);
     }
   }
 
@@ -41,27 +40,28 @@ let text = $derived(result >= props.treshold / 100 ? 'YES' : 'NO')
   }
 </script>
 <div class="flex flex-col items-center justify-center">
-  <p>{status}</p>
+  <!-- <p>{status}</p> -->
   <fieldset>
     <!-- <legend>Add info about the decision</legend> -->
     <div class="flex gap-4 items-end">
-      <label>
+      <label class="flex flex-col gap-2">
         What are you deciding about?
         <Input
             type="text"
+            class="dark:bg-foreground dark:text-background"
             bind:value={questionText} />
       </label>
 
-      <Button variant="outline" onclick={clearText}>Clear Text</Button>
+      <Button variant="outline" class="cursor-pointer" onclick={clearText}>Clear Text</Button>
     </div>
 
     <RedButton onclick={getRandom} />
   </fieldset>
 
   {#if result >= 0}
-    <div class="flex flex-col items-center my-10">
-      <span>Result: {text}</span>
-      <span>Percentage: {percentageText}</span>
+    <div class="flex flex-col items-center my-4">
+      <span class="text-2xl font-bold">{text}</span>
+      <!-- <span>Percentage: {percentageText}</span> -->
     </div>
   {/if}
 </div>

@@ -5,7 +5,7 @@
 	let { children } = $props()
 </script>
 
-<nav class="flex justify-center items-center gap-4 p-4">
+<nav class="flex justify-center items-center gap-4 p-2">
 	<a href="/">Home</a>
 	<a href="/about">About</a>
 	<a href="/contact">Contact</a>

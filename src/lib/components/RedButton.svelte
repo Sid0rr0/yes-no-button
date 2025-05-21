@@ -11,20 +11,28 @@
 
 .button{
   --press-time: 0.2s;
-  --button-width: 300px;
-  --button-height: 50px;
+  --button-width: 220px;
+  --button-height: 40px;
+
+	box-shadow: 0px 5px 0 20px #4a3f3f, 0px 20px 0 30px #342f2f;
+
+  @variant sm {
+    --button-width: 300px;
+  	--button-height: 50px;
+  }
 
   @variant md {
     --button-width: 320px;
     --button-height: 60px;
+		box-shadow: 0px 15px 0 20px #4a3f3f, 0px 40px 0 30px #342f2f;
   }
 
   @variant lg {
-    --button-width: 480px;
-    --button-height: 80px;
+    --button-width: 400px;
+    --button-height: 60px;
   }
 
-  box-shadow: 0px 15px 0 20px #352d2d, 0px 40px 0 30px #000000;
+  
 	cursor: pointer;
 	background-color: #c0392b;
 	position: absolute;
