@@ -1,13 +1,15 @@
 <script lang="ts">
-	import '../app.css';
+	import ThemeSwitcher from '@/lib/components/ThemeSwitcher.svelte'
+	import '../app.css'
 	
-	let { children } = $props();
+	let { children } = $props()
 </script>
 
-<nav class="flex justify-center items-center gap-4 bg-gray-800 text-white p-4">
+<nav class="flex justify-center items-center gap-4 p-4">
 	<a href="/">Home</a>
 	<a href="/about">About</a>
 	<a href="/contact">Contact</a>
+	<ThemeSwitcher />
 </nav>
 
 <main class="flex flex-col items-center justify-center">
