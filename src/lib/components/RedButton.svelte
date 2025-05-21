@@ -36,7 +36,7 @@
 	cursor: pointer;
 	background-color: #c0392b;
 	position: absolute;
-  top: 75%;
+  bottom: 13%;
   left: 50%;
 	border-radius: 50%;
 	width: var(--button-width);

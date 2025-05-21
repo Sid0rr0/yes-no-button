@@ -1,16 +1,14 @@
 <div class="mt-2 w-full flex flex-col items-center">
-  <span class="self-start" >Your last decision:</span>
+  <span >Your last decision:</span>
   <DecisionList numberOfQuestions={1} />
 
   <div class="flex flex-col items-center gap-4 w-full my-4">
-    <div>
-      <label class="">
-        Chance of YES:
-        <input type="number" min="1" max="100" bind:value={percentage}  class="p-1 border rounded text-center text-lg" />
-        %
-      </label>
-    </div>
-    <input type="range" min="1" max="100" class="w-1/2" bind:value={percentage} />
+    <label>
+      Chance of YES:
+      <input type="number" min="1" max="100" bind:value={percentage}  class="p-1 border rounded text-center text-lg" />
+      %
+    </label>
+    <input type="range" min="1" max="100" class="w-10/12 sm:w-1/2" bind:value={percentage} />
   </div>
 
   <QuestionForm treshold={treshold} />

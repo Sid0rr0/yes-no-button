@@ -43,9 +43,9 @@ let text = $derived(result >= props.treshold / 100 ? 'YES' : 'NO')
   <!-- <p>{status}</p> -->
   <fieldset>
     <!-- <legend>Add info about the decision</legend> -->
-    <div class="flex gap-4 items-end">
+    <div class="flex flex-col sm:flex-row gap-4 items-end">
       <label class="flex flex-col gap-2">
-        What are you deciding about?
+        <span class="md:text-xl" >What are you deciding about?</span>
         <Input
             type="text"
             class="dark:bg-foreground dark:text-background"

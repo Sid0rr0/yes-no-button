@@ -17,9 +17,8 @@
   )
 </script>
 
-
-<div class="flex flex-col items-center gap-2 w-full">
-    <ul class="w-full md:w-1/2 lg:w-1/3">
+<div class="flex flex-col items-center gap-2 md:w-1/2 lg:w-1/3">
+    <ul class="w-full">
       <li class="flex justify-between items-center p-2 border text-sm">
         <span class="text-sm">Question & Date</span>
         <div class="grid grid-cols-3 gap-4">
@@ -44,4 +43,3 @@
     </ul>
     <span class="self-end" >Total count: {$questionCount}</span>
   </div>
-
