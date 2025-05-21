@@ -7,7 +7,7 @@
 
 <nav class="flex justify-center items-center gap-4 p-2">
 	<a href="/">Home</a>
-	<a href="/history">History</a>
+	<a href="/data">Data</a>
 	<a href="/about">About</a>
 	<ThemeSwitcher />
 </nav>
