@@ -1,30 +1,6 @@
-<div class="mt-2 w-full">
-  <div class="flex flex-col items-center gap-2 w-full px-8">
-    <span>Last {NUMBER_OF_QUESTIONS} decisions (Total: {$questionCount})</span>
-    <ul class="w-full md:w-1/2 lg:w-1/3">
-      <li class="flex justify-between items-center p-2 border text-sm">
-        <span class="text-sm">Question & Date</span>
-        <div class="grid grid-cols-3 gap-4">
-          <span>Treshold</span>
-          <span>Result</span>
-          <span>Decision</span>
-        </div>
-      </li>
-      {#each $questions as question (question)}
-        <li class="flex justify-between items-center p-2 border">
-          <div class="flex flex-col">
-            <span>{question.text}</span>
-            <span class="text-sm">{new Date(question.date).toLocaleString()}</span>
-          </div>
-          <div class="grid grid-cols-3 gap-4">
-            <span>{(question.treshold * 100).toFixed(2)}%</span>
-            <span>{(question.result * 100).toFixed(2)}%</span>
-            <span>{question.result >= question.treshold / 100 ? 'YES' : 'NO'}</span>
-          </div>
-        </li>
-      {/each}
-    </ul>
-  </div>
+<div class="mt-2 w-full flex flex-col items-center">
+  <span class="self-start" >Your last decision:</span>
+  <DecisionList numberOfQuestions={1} />
 
   <div class="flex flex-col items-center gap-4 w-full my-4">
     <div>
@@ -44,17 +20,8 @@
   import QuestionForm from "$lib/components/QuestionForm.svelte"
   import { onMount } from 'svelte'
   import { db } from "@/db"
-  import { liveQuery } from "dexie"
+  import DecisionList from "@/lib/components/DecisionList.svelte"
   const INITIAL_TRESHOLD = 0.5
-  const NUMBER_OF_QUESTIONS = 2
-
-  let questions = liveQuery(
-    () => db.questions.reverse().limit(NUMBER_OF_QUESTIONS).toArray()
-  )
-
-  let questionCount = liveQuery(
-    () => db.questions.count()
-  )
 
   let treshold = $state(INITIAL_TRESHOLD)
   let percentage = $derived(treshold * 100)

@@ -7,15 +7,15 @@
 
 <nav class="flex justify-center items-center gap-4 p-2">
 	<a href="/">Home</a>
+	<a href="/history">History</a>
 	<a href="/about">About</a>
-	<a href="/contact">Contact</a>
 	<ThemeSwitcher />
 </nav>
 
-<main class="flex flex-col items-center justify-center">
+<main class="flex flex-col items-center flex-grow mx-6">
 	{@render children()}
 </main>
 
-<footer class="absolute bottom-0 left-0 w-full text-center pb-2">
+<footer class="w-full text-center pb-2">
 	<p>© 2025 Yes/No button</p>
 </footer>
