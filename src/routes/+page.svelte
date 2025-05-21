@@ -11,7 +11,7 @@
     <input type="range" min="1" max="100" class="w-10/12 sm:w-1/2" bind:value={percentage} />
   </div>
 
-  <QuestionForm treshold={treshold} />
+  <QuestionForm treshold={percentage} />
 </div>
 
 <script lang="ts">

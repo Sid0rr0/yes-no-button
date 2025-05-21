@@ -18,7 +18,7 @@ let text = $derived(result >= props.treshold / 100 ? 'YES' : 'NO')
     try {
       await db.questions.add({
         text: questionText,
-        treshold: props.treshold,
+        treshold: props.treshold / 100,
         result,
         date: new Date().toISOString(),
       });
