@@ -55,7 +55,7 @@ let text = $derived(result >= props.treshold / 100 ? 'YES' : 'NO')
       <Button variant="outline" class="cursor-pointer" onclick={clearText}>Clear Text</Button>
     </div>
 
-    <RedButton onclick={getRandom} />
+    <RedButton onpointerdown={getRandom} />
   </fieldset>
 
   {#if result >= 0}

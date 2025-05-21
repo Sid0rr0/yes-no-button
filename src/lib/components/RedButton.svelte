@@ -3,14 +3,14 @@
 </script>
 
 <button class="button" {...props}>
-    <!--  -->
-  </button>
+	<!--  -->
+</button>
 
 <style>
 @reference "tailwindcss";
 
 .button{
-  --press-time: 0.2s;
+  --press-time: 0.1s;
   --button-width: 220px;
   --button-height: 40px;
 
@@ -32,7 +32,6 @@
     --button-height: 60px;
   }
 
-  
 	cursor: pointer;
 	background-color: #c0392b;
 	position: absolute;
