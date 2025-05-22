@@ -5,6 +5,12 @@ This is a simple decision-making app that helps you make choices by providing a 
 The data is stored locally in your browser using IndexedDB and service workers, so you can
 access it even when you're offline.
 
+## TODO
+[ ] Confirm delete data
+[ ] Mute sound button
+[ ] PWA
+[ ] Statistics from the data
+
 ## Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
