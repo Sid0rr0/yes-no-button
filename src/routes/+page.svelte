@@ -5,7 +5,7 @@
   <div class="flex flex-col items-center gap-4 w-full my-4">
     <div class="flex gap-4 items-center">
       <label>
-      Chance of YES:
+      Chances of YES:
       <input type="number" min="1" max="100" bind:value={percentage} onchange={() => updateTheshold()} class="p-1 border rounded text-center text-lg" />
       %
     </label>

@@ -1,18 +1,9 @@
-# sv
+# YES/NO button
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This is a simple decision-making app that helps you make choices by providing a random yes or no answer. You can also keep track of your decisions and their outcomes. Made for people, who have a hard time making decisions.
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
+The data is stored locally in your browser using IndexedDB and service workers, so you can
+access it even when you're offline.
 
 ## Developing
 

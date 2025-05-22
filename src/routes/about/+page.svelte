@@ -4,12 +4,12 @@
   <p>
     This is a simple decision-making app that helps you make choices by
     providing a random yes or no answer. You can also keep track of your
-    decisions and their outcomes.
+    decisions and their outcomes. Made for people, who have a hard time making decisions.
   </p>
 
   <h2 class="text-xl font-bold">Technical details</h2>
   <p>
-    Your data is stored locally in your browser using IndexedDB, so you can
+    Your data is stored locally in your browser using IndexedDB and service workers, so you can
     access it even when you're offline. 
   </p>
 
@@ -23,7 +23,9 @@
 
   <h2 class="text-xl font-bold">Links</h2>
   <div class="flex gap-4">
-    <a href="https://github.com/Sid0rr0/yes-no-button" target="_blank">GitHub</a>
-    <a href="https://www.hungstuff.online/" target="_blank">HungStuff.online</a>
+    <a href="https://github.com/Sid0rr0/yes-no-button" target="_blank">GitHub Repository</a>
+    <span>
+      About me: <a href="https://www.hungstuff.online/" target="_blank">HungStuff.online</a>
+    </span>
   </div>
 </div>

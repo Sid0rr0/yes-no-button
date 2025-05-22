@@ -10,6 +10,8 @@
 	<a href="/data">Data</a>
 	<a href="/about">About</a>
 	<ThemeSwitcher />
+	<!-- TODO mute sound button -->
+	<!-- TODO lang switch? -->
 </nav>
 
 <main class="flex flex-col items-center flex-grow mx-6">
