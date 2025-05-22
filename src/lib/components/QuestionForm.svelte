@@ -12,7 +12,7 @@
 
 
 // let percentageText = $derived((result*100).toFixed(2)+"%")
-let text = $derived(result >= props.treshold / 100 ? 'YES' : 'NO')
+let text = $derived(result <= props.treshold / 100 ? 'YES' : 'NO')
 
   async function addQuestion() {
     try {

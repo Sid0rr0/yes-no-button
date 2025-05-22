@@ -36,7 +36,7 @@
           <div class="grid grid-cols-3 gap-4">
             <span>{(question.treshold * 100).toFixed(2)}%</span>
             <span>{(question.result * 100).toFixed(2)}%</span>
-            <span>{question.result >= question.treshold ? 'YES' : 'NO'}</span>
+            <span>{question.result <= question.treshold ? 'YES' : 'NO'}</span>
           </div>
         </li>
       {/each}
