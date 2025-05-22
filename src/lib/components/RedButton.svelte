@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { onMount } from "svelte"
+	import { onMount, getContext } from "svelte"
+	import type { Readable } from "svelte/store";
 
 	let props = $props()
 	let audio: HTMLAudioElement | null = null
+	let isMuted: Readable<boolean> = getContext('isMuted');
 
 	function loadAudio() {
 		audio = new Audio("/analog-appliance-button-7-185282.mp3")
@@ -18,7 +20,10 @@
 	}
 
 	function buttonClick(event: PointerEvent) {
-		playAudio()
+		if (!$isMuted) {
+			playAudio()
+		}
+		
 		props.onpointerdown?.(event)
 	}
 
