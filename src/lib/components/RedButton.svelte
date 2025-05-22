@@ -1,8 +1,34 @@
 <script lang="ts">
+	import { onMount } from "svelte"
+
 	let props = $props()
+	let audio: HTMLAudioElement | null = null
+
+	function loadAudio() {
+		audio = new Audio("/analog-appliance-button-7-185282.mp3")
+		audio.volume = 0.7
+		
+	}
+
+	function playAudio() {
+		if (audio) {
+			audio.currentTime = 0
+			audio.play()
+		}
+	}
+
+	function buttonClick(event: PointerEvent) {
+		playAudio()
+		props.onpointerdown?.(event)
+	}
+
+	onMount(() => {
+		loadAudio()
+	})
+
 </script>
 
-<button class="button" {...props}>
+<button class="button" onpointerdown={buttonClick} >
 	<!--  -->
 </button>
 
