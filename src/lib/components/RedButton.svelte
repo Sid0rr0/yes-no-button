@@ -20,6 +20,10 @@
 	}
 
 	function buttonClick(event: PointerEvent) {
+		if (props.disabled) {
+			return
+		}
+
 		if (!$isMuted) {
 			playAudio()
 		}
@@ -33,7 +37,7 @@
 
 </script>
 
-<button class="button" onpointerdown={buttonClick} >
+<button class="button" {...props} onpointerdown={buttonClick} >
 	<!--  -->
 </button>
 

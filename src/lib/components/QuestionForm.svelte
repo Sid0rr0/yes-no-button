@@ -3,10 +3,11 @@
   import { Input } from "$lib/components/ui/input"
   import { Button } from "$lib/components/ui/button"
   import RedButton from "$lib/components/RedButton.svelte"
+  import Spinner from "./Spinner.svelte"
 
   let props = $props()
 
-  // let status = $state("")
+  let saving = $state(false)
   let questionText = $state("")
   let result = $state(-1)
 
@@ -15,24 +16,27 @@
 let text = $derived(result <= props.treshold / 100 ? 'YES' : 'NO')
 
   async function addQuestion() {
-    try {
-      await db.questions.add({
-        text: questionText,
-        treshold: props.treshold / 100,
-        result,
-        date: new Date().toISOString(),
-      });
+    saving = true
+    setTimeout(async () => {
+      result = Math.random()
+    
+      try {
+        await db.questions.add({
+          text: questionText,
+          treshold: props.treshold / 100,
+          result,
+          date: new Date().toISOString(),
+        });
 
-      // status = `Question ${questionText} successfully added.`;
-    } catch (error) {
-      // status = `Failed to add ${questionText}: ${error}`;
-      console.error("Failed to add question:", error);
-    }
-  }
-
-  function getRandom() {
-    result = Math.random()
-    addQuestion()
+        // status = `Question ${questionText} successfully added.`;
+      } catch (error) {
+        // status = `Failed to add ${questionText}: ${error}`;
+        
+        console.error("Failed to add question:", error);
+      } finally {
+        saving = false
+      }
+    }, Math.random() * 900)
   }
 
   function clearText() {
@@ -55,13 +59,15 @@ let text = $derived(result <= props.treshold / 100 ? 'YES' : 'NO')
       <Button variant="outline" class="cursor-pointer" onclick={clearText}>Clear Text</Button>
     </div>
 
-    <RedButton onpointerdown={getRandom} />
+    <RedButton onpointerdown={addQuestion} disabled={saving} />
   </fieldset>
 
-  {#if result >= 0}
-    <div class="flex flex-col items-center my-4">
+  <div class="flex flex-col items-center my-4">
+    {#if saving}
+      <Spinner />
+    {:else if result >= 0}
       <span class="text-2xl font-bold">{text}</span>
       <!-- <span>Percentage: {percentageText}</span> -->
-    </div>
-  {/if}
+    {/if}
+  </div>
 </div>
