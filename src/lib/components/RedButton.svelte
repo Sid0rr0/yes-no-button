@@ -61,7 +61,7 @@
 	cursor: pointer;
 	background-color: #c0392b;
 	position: absolute;
-  bottom: 13%;
+  bottom: 11%;
   left: 50%;
 	border-radius: 50%;
 	width: var(--button-width);

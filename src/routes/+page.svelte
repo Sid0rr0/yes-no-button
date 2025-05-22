@@ -1,5 +1,4 @@
 <div class="mt-2 w-full flex flex-col items-center">
-  <span >Your last decision:</span>
   <DecisionList numberOfQuestions={1} />
 
   <div class="flex flex-col items-center gap-4 w-full my-4">
