@@ -6,10 +6,10 @@ The data is stored locally in your browser using IndexedDB and service workers, 
 access it even when you're offline.
 
 ## TODO
-[ ] Confirm delete data
-[ ] Mute sound button
-[ ] PWA
-[ ] Statistics from the data
+- [ ] Confirm delete data
+- [ ] Mute sound button
+- [ ] PWA
+- [ ] Statistics from the data
 
 ## Developing
 
