@@ -6,6 +6,7 @@ interface Question {
   treshold: number;
   result: number;
   date: string;
+  followedThrough: boolean;
 }
 
 const db = new Dexie('QuestionsDatabase') as Dexie & {
@@ -21,7 +22,7 @@ const db = new Dexie('QuestionsDatabase') as Dexie & {
 
 // Schema declaration:
 db.version(1).stores({
-  questions: '++id, text, treshold, result, date', // primary key "id" (for the runtime!)
+  questions: '++id, text, treshold, result, date, followedThrough', // primary key "id" (for the runtime!)
   treshold: 'id, value',
 })
 

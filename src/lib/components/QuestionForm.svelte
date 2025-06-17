@@ -26,6 +26,7 @@ let text = $derived(result <= props.treshold / 100 ? 'YES' : 'NO')
           treshold: props.treshold / 100,
           result,
           date: new Date().toISOString(),
+          followedThrough: false,
         });
 
         // status = `Question ${questionText} successfully added.`;
