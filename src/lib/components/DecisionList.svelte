@@ -24,23 +24,33 @@
   </div>
   <ul class="w-full">
     <li class="flex justify-between items-center p-2 border text-sm">
-      <span class="text-sm">Question & Date</span>
+      <div class="flex gap-6 items-center">
+        {#if numberOfQuestions > 1 } <span class="text-sm">#</span> {/if}
+        <span class="text-sm">Question & Date</span>
+      </div>
       <div class="grid grid-cols-3 gap-4">
         <span>Treshold</span>
         <span>Result</span>
         <span>Decision</span>
       </div>
     </li>
-    {#each $questions as question (question)}
+    {#each $questions as question, i (question.date)}
       <li class="flex justify-between items-center p-2 border">
-        <div class="flex flex-col">
-          <span>{question.text}</span>
-          <span class="text-sm">{new Date(question.date).toLocaleString()}</span>
+        <div class="flex gap-4 items-center">
+          {#if numberOfQuestions > 1 } <span class="text-lg">#{i + 1}</span> {/if}
+          <div class="flex flex-col justify-center">
+            <strong>{question.text}</strong>
+            <span class="text-sm">{new Date(question.date).toLocaleString()}</span>
+          </div>
         </div>
         <div class="grid grid-cols-3 gap-4">
           <span>{(question.treshold * 100).toFixed(2)}%</span>
           <span>{(question.result * 100).toFixed(2)}%</span>
-          <span>{question.result <= question.treshold ? 'YES' : 'NO'}</span>
+          {#if question.result <= question.treshold}
+            <b class="text-green-600">YES</b>
+          {:else}
+            <b class="text-red-500">NO</b>
+          {/if}
         </div>
       </li>
     {/each}

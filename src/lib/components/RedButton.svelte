@@ -48,6 +48,7 @@
   --press-time: 0.1s;
   --button-width: 220px;
   --button-height: 40px;
+	bottom: 15%;
 
 	box-shadow: 0px 5px 0 20px #4a3f3f, 0px 20px 0 30px #342f2f;
 
@@ -65,12 +66,12 @@
   @variant lg {
     --button-width: 400px;
     --button-height: 60px;
+		bottom: 20%;
   }
 
 	cursor: pointer;
 	background-color: #c0392b;
 	position: absolute;
-  bottom: 11%;
   left: 50%;
 	border-radius: 50%;
 	width: var(--button-width);

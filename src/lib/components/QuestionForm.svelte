@@ -66,7 +66,7 @@ let text = $derived(result <= props.treshold / 100 ? 'YES' : 'NO')
     {#if saving}
       <Spinner />
     {:else if result >= 0}
-      <span class="text-2xl font-bold">{text}</span>
+      <h2 class="text-3xl font-bold">{text}</h2>
       <!-- <span>Percentage: {percentageText}</span> -->
     {/if}
   </div>

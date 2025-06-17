@@ -1,4 +1,4 @@
-<div class="mt-2 w-full flex flex-col items-center">
+<div class="mt-2 w-full flex flex-col gap-4 items-center">
   <DecisionList numberOfQuestions={1} />
 
   <QuestionForm treshold={percentage} />
