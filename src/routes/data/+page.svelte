@@ -2,7 +2,8 @@
   import { db } from "@/db";
   import DecisionList from "@/lib/components/DecisionList.svelte"
   import { Button } from "@/lib/components/ui/button"
-  import { Trash2, FileDown } from "@lucide/svelte";
+  import Trash2 from "@lucide/svelte/icons/trash-2"
+  import FileDown from "@lucide/svelte/icons/file-down"
 
   async function exportData() {
     try {
