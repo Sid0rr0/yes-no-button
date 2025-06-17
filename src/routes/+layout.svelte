@@ -43,7 +43,7 @@
 	<!-- TODO lang switch? -->
 </nav>
 
-<main class="flex flex-col items-center flex-grow mx-6">
+<main class="flex flex-col items-center flex-grow mx-2">
 	{@render children()}
 </main>
 

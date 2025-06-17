@@ -22,7 +22,7 @@
   }
 </script>
 
-<div class="flex flex-col items-center gap-2 md:w-1/2 lg:w-1/3">
+<div class="flex flex-col items-center gap-2 w-full md:w-1/2 lg:w-1/3">
   <div class="flex justify-between items-center w-full">
     <span>{numberOfQuestions > 1 ? `Your last ${numberOfQuestions} decisions:` : "Your last decision:"}</span>
     <span class="self-end" >Total count: {$questionCount}</span>
@@ -33,7 +33,7 @@
         {#if numberOfQuestions > 1 } <span class="text-sm">#</span> {/if}
         <span class="text-sm">Question & Date</span>
       </div>
-      <div class="grid grid-cols-4 gap-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
         <span>Treshold</span>
         <span>Result</span>
         <span>Decision</span>
@@ -49,7 +49,7 @@
             <span class="text-sm">{new Date(question.date).toLocaleString()}</span>
           </div>
         </div>
-        <div class="grid grid-cols-4 gap-4 text-center">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           <span>{(question.treshold * 100).toFixed(2)}%</span>
           <span>{(question.result * 100).toFixed(2)}%</span>
           {#if question.result <= question.treshold}
@@ -57,7 +57,7 @@
           {:else}
             <b class="text-red-500">NO</b>
           {/if}
-          <Switch bind:checked={question.followedThrough} onCheckedChange={() => updateQuestion(question.id, !question.followedThrough)} />
+          <Switch checked={question.followedThrough} onCheckedChange={() => updateQuestion(question.id, !question.followedThrough)} />
         </div>
       </li>
     {/each}
