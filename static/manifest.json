@@ -1,0 +1,17 @@
+{
+  "name": "Yes/No Button",
+  "description": "Can't decide? Use this app to get a random Yes or No answer.",
+  "short_name": "Yes/No",
+  "display": "standalone",
+  "start_url": "/",
+  "background_color": "#808080",
+  "theme_color": "#fff",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
